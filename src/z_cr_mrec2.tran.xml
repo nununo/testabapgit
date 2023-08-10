@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_TRAN" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <TSTC>
+    <TCODE>Z_CR_MREC2</TCODE>
+    <PGMNA>Z_GL_PP_R_CREATE_PVERS_MREC2</PGMNA>
+    <DYPNO>1000</DYPNO>
+    <CINFO>hA==</CINFO>
+   </TSTC>
+   <TSTCC>
+    <TCODE>Z_CR_MREC2</TCODE>
+    <S_WEBGUI>1</S_WEBGUI>
+    <S_WIN32>X</S_WIN32>
+    <S_PLATIN>X</S_PLATIN>
+   </TSTCC>
+   <TSTCT>
+    <SPRSL>E</SPRSL>
+    <TCODE>Z_CR_MREC2</TCODE>
+    <TTEXT>Create Master Recipe</TTEXT>
+   </TSTCT>
+   <AUTHORIZATIONS>
+    <TSTCA>
+     <TCODE>Z_CR_MREC2</TCODE>
+     <OBJCT>C_FVER_WRK</OBJCT>
+     <FIELD>ACTVT</FIELD>
+    </TSTCA>
+    <TSTCA>
+     <TCODE>Z_CR_MREC2</TCODE>
+     <OBJCT>C_FVER_WRK</OBJCT>
+     <FIELD>WERKS</FIELD>
+    </TSTCA>
+   </AUTHORIZATIONS>
+   <I18N_TPOOL>
+    <TSTCT>
+     <SPRSL>1</SPRSL>
+     <TTEXT>Create Master Recipe</TTEXT>
+    </TSTCT>
+    <TSTCT>
+     <SPRSL>2</SPRSL>
+     <TTEXT>Create Master Recipe</TTEXT>
+    </TSTCT>
+    <TSTCT>
+     <SPRSL>3</SPRSL>
+     <TTEXT>Create Master Recipe</TTEXT>
+    </TSTCT>
+    <TSTCT>
+     <SPRSL>A</SPRSL>
+     <TTEXT>Create Master Recipe</TTEXT>
+    </TSTCT>
+    <TSTCT>
+     <SPRSL>B</SPRSL>
+     <TTEXT>Create Master Recipe</TTEXT>
+    </TSTCT>
+    <TSTCT>
+     <SPRSL>H</SPRSL>
+     <TTEXT>Create Master Recipe</TTEXT>
+    </TSTCT>
+    <TSTCT>
+     <SPRSL>I</SPRSL>
+     <TTEXT>Create Master Recipe</TTEXT>
+    </TSTCT>
+    <TSTCT>
+     <SPRSL>J</SPRSL>
+     <TTEXT>Create Master Recipe</TTEXT>
+    </TSTCT>
+    <TSTCT>
+     <SPRSL>P</SPRSL>
+     <TTEXT>Create Master Recipe</TTEXT>
+    </TSTCT>
+    <TSTCT>
+     <SPRSL>R</SPRSL>
+     <TTEXT>Create Master Recipe</TTEXT>
+    </TSTCT>
+    <TSTCT>
+     <SPRSL>S</SPRSL>
+     <TTEXT>Create Master Recipe</TTEXT>
+    </TSTCT>
+    <TSTCT>
+     <SPRSL>쁩</SPRSL>
+     <TTEXT>Create Master Recipe</TTEXT>
+    </TSTCT>
+   </I18N_TPOOL>
+  </asx:values>
+ </asx:abap>
+</abapGit>

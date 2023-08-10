@@ -1,0 +1,2570 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<abapGit version="v1.0.0" serializer="LCL_OBJECT_CLAS" serializer_version="v1.0.0">
+ <asx:abap xmlns:asx="http://www.sap.com/abapxml" version="1.0">
+  <asx:values>
+   <VSEOCLASS>
+    <CLSNAME>ZCL_MRCP_UTILITES</CLSNAME>
+    <LANGU>E</LANGU>
+    <DESCRIPT>Business logic for master recipe</DESCRIPT>
+    <STATE>1</STATE>
+    <CLSCCINCL>X</CLSCCINCL>
+    <FIXPT>X</FIXPT>
+    <UNICODE>X</UNICODE>
+   </VSEOCLASS>
+   <TPOOL>
+    <item>
+     <ID>I</ID>
+     <KEY>002</KEY>
+     <ENTRY>Header</ENTRY>
+     <LENGTH>20</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>003</KEY>
+     <ENTRY>Operation</ENTRY>
+     <LENGTH>20</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>004</KEY>
+     <ENTRY>Phase</ENTRY>
+     <LENGTH>20</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>005</KEY>
+     <ENTRY>Process Instruction</ENTRY>
+     <LENGTH>40</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>006</KEY>
+     <ENTRY>Process Instruction Characteristic</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>007</KEY>
+     <ENTRY>Resource</ENTRY>
+     <LENGTH>20</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>008</KEY>
+     <ENTRY>Resource Selection Criteria</ENTRY>
+     <LENGTH>60</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>009</KEY>
+     <ENTRY>Production Version</ENTRY>
+     <LENGTH>40</LENGTH>
+    </item>
+    <item>
+     <ID>I</ID>
+     <KEY>010</KEY>
+     <ENTRY>Material Assignment</ENTRY>
+     <LENGTH>40</LENGTH>
+    </item>
+   </TPOOL>
+   <I18N_TPOOL>
+    <item>
+     <LANGUAGE>1</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>抬头</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>工序</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>阶段</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>流程指令</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>006</KEY>
+       <ENTRY>流程指令特征</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>007</KEY>
+       <ENTRY>资源</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>008</KEY>
+       <ENTRY>资源选择条件</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>009</KEY>
+       <ENTRY>生产版本</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>010</KEY>
+       <ENTRY>物料分配</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>2</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>ส่วนหัว</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>การปฏิบัติงาน</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>เฟส</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>คำสั่งในกระบวนการ</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>006</KEY>
+       <ENTRY>คุณลักษณะคำสั่งในกระบวนการ</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>007</KEY>
+       <ENTRY>ทรัพยากร</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>008</KEY>
+       <ENTRY>เกณฑ์การเลือกทรัพยากร</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>009</KEY>
+       <ENTRY>เวอร์ชันการผลิต</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>010</KEY>
+       <ENTRY>การกำหนดวัสดุ</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>3</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>헤더</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>작업</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>단계</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>프로세스 지시</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>006</KEY>
+       <ENTRY>프로세스 지시 특징</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>007</KEY>
+       <ENTRY>자원</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>008</KEY>
+       <ENTRY>자원 선택 기준</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>009</KEY>
+       <ENTRY>생산 버전</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>010</KEY>
+       <ENTRY>자재 지정</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>A</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>المقدمة</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>العملية</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>المرحلة</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>إرشادات العملية</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>006</KEY>
+       <ENTRY>الصفة المميزة لإرشادات العملية</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>007</KEY>
+       <ENTRY>المورد</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>008</KEY>
+       <ENTRY>معايير تحديد الموارد</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>009</KEY>
+       <ENTRY>إصدار الإنتاج</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>010</KEY>
+       <ENTRY>تعيين المادة</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>B</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>כותרת</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>פעולה</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>שלב</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>הוראת תהליך</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>006</KEY>
+       <ENTRY>מאפיין הוראת תהליך</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>007</KEY>
+       <ENTRY>משאב</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>008</KEY>
+       <ENTRY>קריטריון בחירת משאב</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>009</KEY>
+       <ENTRY>גרסת ייצור</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>010</KEY>
+       <ENTRY>הקצאת חומר</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>D</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Kopfzeile</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Vorgang</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>Phase</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>Prozessanweisung</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>006</KEY>
+       <ENTRY>Merkmal der Prozessanweisung</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>007</KEY>
+       <ENTRY>Ressource</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>008</KEY>
+       <ENTRY>Ressourcenauswahlkriterien</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>009</KEY>
+       <ENTRY>Fertigungsversion</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>010</KEY>
+       <ENTRY>Materialzuordnung</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>H</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Fejlécsor</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Művelet</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>Fázis</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>Folyamatutasítás</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>006</KEY>
+       <ENTRY>Folyamatutasítás jellemzője</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>007</KEY>
+       <ENTRY>Erőforrás</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>008</KEY>
+       <ENTRY>Erőforrás-kiválasztási feltételek</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>009</KEY>
+       <ENTRY>Gyártási verzió</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>010</KEY>
+       <ENTRY>Anyag-hozzárendelés</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>I</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Riga testata</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Operazione</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>Fase</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>Istruzioni processo</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>006</KEY>
+       <ENTRY>Caratteristica dell&apos;istruzione processo</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>007</KEY>
+       <ENTRY>Risorsa</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>008</KEY>
+       <ENTRY>Criteri di selezione delle risorse</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>009</KEY>
+       <ENTRY>Versione di produzione</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>010</KEY>
+       <ENTRY>Attribuzione materiale</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>J</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>ヘッダ</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>作業</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>フェーズ</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>プロセス指示</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>006</KEY>
+       <ENTRY>プロセス指示特性</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>007</KEY>
+       <ENTRY>リソース</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>008</KEY>
+       <ENTRY>リソース選択基準</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>009</KEY>
+       <ENTRY>製造バージョン</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>010</KEY>
+       <ENTRY>品目割当</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>P</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Linha de cabeçalho</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Operação</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>Fase</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>Instruções do processo</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>006</KEY>
+       <ENTRY>Característica das instrução do processo</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>007</KEY>
+       <ENTRY>Recurso</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>008</KEY>
+       <ENTRY>Critérios de seleção de recurso</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>009</KEY>
+       <ENTRY>Versão de produção</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>010</KEY>
+       <ENTRY>Atribuição de material</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>R</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Строка заголовка</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Операция</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>Фаза</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>Инструкция по процессу</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>006</KEY>
+       <ENTRY>Признак инструкции по процессу</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>007</KEY>
+       <ENTRY>Ресурс</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>008</KEY>
+       <ENTRY>Критерии выбора ресурсов</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>009</KEY>
+       <ENTRY>Вариант изготовления</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>010</KEY>
+       <ENTRY>Присвоение материала</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>S</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Línea de cabecera</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Operación</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>Fase</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>Instrucciones de proceso</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>006</KEY>
+       <ENTRY>Característica de instrucción de proceso</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>007</KEY>
+       <ENTRY>Recursos</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>008</KEY>
+       <ENTRY>Criterios de selección de recursos</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>009</KEY>
+       <ENTRY>Versión fabricación</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>010</KEY>
+       <ENTRY>Asignación de material</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+    <item>
+     <LANGUAGE>쁩</LANGUAGE>
+     <TEXTPOOL>
+      <item>
+       <ID>I</ID>
+       <KEY>002</KEY>
+       <ENTRY>Tiêu đề</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>003</KEY>
+       <ENTRY>Hoạt động</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>004</KEY>
+       <ENTRY>G.đoạn</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>005</KEY>
+       <ENTRY>Hướng dẫn xử lý</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>006</KEY>
+       <ENTRY>Đặc tính hướng dẫn quy trình</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>007</KEY>
+       <ENTRY>Nguồn</ENTRY>
+       <LENGTH>20</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>008</KEY>
+       <ENTRY>Tiêu chí lựa chọn tài nguyên</ENTRY>
+       <LENGTH>60</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>009</KEY>
+       <ENTRY>Phiên bản sản xuất</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+      <item>
+       <ID>I</ID>
+       <KEY>010</KEY>
+       <ENTRY>Gán vật tư</ENTRY>
+       <LENGTH>40</LENGTH>
+      </item>
+     </TEXTPOOL>
+    </item>
+   </I18N_TPOOL>
+   <DESCRIPTIONS>
+    <SEOCOMPOTX>
+     <CMPNAME>ADD_MATERIAL_ASSIGNMENT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Add Material Assignment</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ADD_MAT_COMP_ASSIGNMENT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Add Material Component Assignment</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ADD_OPERATION</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Add Operation to Master Recipe</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ADD_PHASE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Add Phase to Master Recipe</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ADD_PI</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Add Process Instruction to Master Recipe</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ADD_PI_CHAR_VAL</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Add PI Characteristic to Master Recipe</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ADD_PRODVER</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Add Production Version</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ADD_RESOURCE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Add Resource to Master Recipe</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ADD_RSC</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Add Resouce Selection Criteria to Master Recipe</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>ADD_STPO</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Add STPO</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>BUFFER_RECIPE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Puts the Master Recipe into the buffer if it&apos;s possible</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CHANGE_HEADER</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Change Master Recipe Header</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CHANGE_MATERIAL_ASSIGNMENT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Change Material Assignment</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CHANGE_MESSAGES</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Change messages</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CHANGE_OPERATION</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Change Operation</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CHANGE_PHASE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Change Phase</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CHANGE_PI</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Change Process Instruction</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CHANGE_PI_CHAR_VAL</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Change Process Instruction Characteristic Value</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CHANGE_PRODVER</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Change Production Version</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CHANGE_RESOURCE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Change Secondary Resource</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CHANGE_RSC</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Change Resource Selection Criteria</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CHECK_EXISTENCE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Check Master Recipe existence in DB</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CLEAN_UP</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Clean up ; Clear buffer ; Unlock objects</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CONSTRUCTOR</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Constructor</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>COPY_ELEMENT_TO_BUFFER_OLD</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Copy Element from Buffer to Buffer Old</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>CREATE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Create Master Recipe Header</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DELETE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Delete Master Recipe</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DELETE_OPERATION</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Delete Operation</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DELETE_PHASE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Delete Phase</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DELETE_PI</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Delete Process Instruction</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DELETE_PI_CHAR_VAL</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Delete PI Characteristic</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DELETE_RESOURCE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Delete Resource</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>DELETE_RSC</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Delete Resource Selection Criteria</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_DEF_SEQ_INC</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Default sequence number increment</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_MOD_FLAG_DELETE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Modification Flag - Delete</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_MOD_FLAG_INSERT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Modificaiton Flag - Insert</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_MOD_FLAG_UPDATE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Modification Flag - Update</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GC_PLNTY_MRCP</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Task List Type</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_DEFAULT_VALUES_WORKCENTER</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Default values from workcenter</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_DETAILS</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Get all data</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_INSTANCE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Get instance of Master Recipe BL class</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_INTERNAL_KEY_MAPPING</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Get internal key mapping</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_PI</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Get Process Instruction</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_SEQ_INCREMENT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Gets sequence increment</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GET_SEQ_NUM</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Get sequence number based on PLNKN, PVZKN and direction</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GO_MRCP</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Business logic for master recipe</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>GV_MSG</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Dummy for message into</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>INIT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Initialization</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>LOCK</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Lock recipe</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MOVE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Move object from one place to an other</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MOVE_OPERATION</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Move Operation</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MOVE_PHASE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Move Phase</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MOVE_PI</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Move Process Instruction</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MOVE_PI_CHAR_VAL</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Move Process Instruction Char</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MOVE_RESOURCE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Move Secondary Resource</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MT_BUFFER</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Local Buffer</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MT_BUFFER_OLD</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Local Buffer</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MT_LOCK_BUFFER</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Lock buffer</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MT_RESCLAS</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>RMS-MRTRS : Table Type for Resource Selection Conditions</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MV_MKMZL</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Internal PI characteristic/characteristic value number</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MV_PLNFT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Internal process instruction number</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>MV_PLNKN</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Number of the task list node</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>READ_MRCP_FROM_DB</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Read Master Recipe data from DB (into buffer)</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SAVE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Save changes</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SAVE_INT</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Save changes</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SHIFT_ITEMS</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Shift sequence numbers based on an abstract sibling</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>SHIFT_SEQUENCE</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Shift sequence numbers based on an exact sibling</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>UNLOCK</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Unlock recipe</DESCRIPT>
+    </SEOCOMPOTX>
+    <SEOCOMPOTX>
+     <CMPNAME>WRITE_MRCP</CMPNAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Create/Modify Master Recipe</DESCRIPT>
+    </SEOCOMPOTX>
+   </DESCRIPTIONS>
+   <DESCRIPTIONS_SUB>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_MATERIAL_ASSIGNMENT</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_MATERIAL_ASSIGNMENT</CMPNAME>
+     <SCONAME>ET_MRCP_MAT_ASSIGNMENT</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Master Recipe Material Assignments</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_MATERIAL_ASSIGNMENT</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_MATERIAL_ASSIGNMENT</CMPNAME>
+     <SCONAME>IT_MRCP_MAT_ASSIGNMENT</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Master Recipe Material Assignments</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_MAT_COMP_ASSIGNMENT</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_MAT_COMP_ASSIGNMENT</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_MAT_COMP_ASSIGNMENT</CMPNAME>
+     <SCONAME>IT_MRCP_MAT_ASSIGNMENT</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Master Recipe Material Assignments</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_OPERATION</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_OPERATION</CMPNAME>
+     <SCONAME>ET_MRCP_OPERATION</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of MRCP Operations</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_OPERATION</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_OPERATION</CMPNAME>
+     <SCONAME>IT_MRCP_OPERATION</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of MRCP Operations</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_OPERATION</CMPNAME>
+     <SCONAME>IV_INSERT_BEFORE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Data element for domain BOOLE: TRUE (=&apos;X&apos;) and FALSE (=&apos; &apos;)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_PHASE</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_PHASE</CMPNAME>
+     <SCONAME>ET_MRCP_PHASE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of MRCP Phases</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_PHASE</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_PHASE</CMPNAME>
+     <SCONAME>IT_MRCP_PHASE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of MRCP Phases</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_PHASE</CMPNAME>
+     <SCONAME>IV_INSERT_BEFORE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Data element for domain BOOLE: TRUE (=&apos;X&apos;) and FALSE (=&apos; &apos;)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_PI</CMPNAME>
+     <SCONAME>ET_INDEX_FAILED</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Index of node ID for which no data is availab</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_PI</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_PI</CMPNAME>
+     <SCONAME>ET_MRCP_PI</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of MRCP Process Instructions</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_PI</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_PI</CMPNAME>
+     <SCONAME>IT_MRCP_PI</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of MRCP Process Instructions</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_PI</CMPNAME>
+     <SCONAME>IV_INSERT_BEFORE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Data element for domain BOOLE: TRUE (=&apos;X&apos;) and FALSE (=&apos; &apos;)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_PI_CHAR_VAL</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_PI_CHAR_VAL</CMPNAME>
+     <SCONAME>ET_MRCP_PI_CHAR_VAL</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of MRCP PI Characteristics</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_PI_CHAR_VAL</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_PI_CHAR_VAL</CMPNAME>
+     <SCONAME>IT_MRCP_PI_CHAR_VAL</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of MRCP PI Characteristics</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_PI_CHAR_VAL</CMPNAME>
+     <SCONAME>IV_INSERT_BEFORE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Data element for domain BOOLE: TRUE (=&apos;X&apos;) and FALSE (=&apos; &apos;)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_PRODVER</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_PRODVER</CMPNAME>
+     <SCONAME>ET_MRCP_PRODVER</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Master Recipe Production Version</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_PRODVER</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_PRODVER</CMPNAME>
+     <SCONAME>IT_MRCP_PRODVER</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Master Recipe Production Version</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_RESOURCE</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_RESOURCE</CMPNAME>
+     <SCONAME>ET_MRCP_RESOURCE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of MRCP Resources</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_RESOURCE</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_RESOURCE</CMPNAME>
+     <SCONAME>IT_MRCP_RESOURCE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of MRCP Resources</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_RESOURCE</CMPNAME>
+     <SCONAME>IV_INSERT_BEFORE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Data element for domain BOOLE: TRUE (=&apos;X&apos;) and FALSE (=&apos; &apos;)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_RSC</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_RSC</CMPNAME>
+     <SCONAME>ET_MRCP_RSC</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of MRCP Resource Selection Criteria</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_RSC</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_RSC</CMPNAME>
+     <SCONAME>IT_MRCP_RSC</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of MRCP Resource Selection Criteria</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_STPO</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_STPO</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>ADD_STPO</CMPNAME>
+     <SCONAME>IT_STPO</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>RMS-MRTRS : Table Type for Structure STPOB</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUFFER_RECIPE</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUFFER_RECIPE</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUFFER_RECIPE</CMPNAME>
+     <SCONAME>IV_AENNR</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Change Number</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUFFER_RECIPE</CMPNAME>
+     <SCONAME>IV_DATUV</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Valid-From Date</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUFFER_RECIPE</CMPNAME>
+     <SCONAME>IV_LOCK</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Data shall be locked</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUFFER_RECIPE</CMPNAME>
+     <SCONAME>IV_PLNAL</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Group Counter</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUFFER_RECIPE</CMPNAME>
+     <SCONAME>IV_PLNNR</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Key for Task List Group</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>BUFFER_RECIPE</CMPNAME>
+     <SCONAME>IV_VERID</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Production Version</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_HEADER</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_HEADER</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_HEADER</CMPNAME>
+     <SCONAME>IT_MRCP_HEADER</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of MRCP Header</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_MATERIAL_ASSIGNMENT</CMPNAME>
+     <SCONAME>ET_INDEX_FAILED</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Index of node ID for which no data is availab</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_MATERIAL_ASSIGNMENT</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_MATERIAL_ASSIGNMENT</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_MATERIAL_ASSIGNMENT</CMPNAME>
+     <SCONAME>IT_MRCP_MAT_ASSIGNMENT</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Master Recipe Material Assignments</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_MESSAGES</CMPNAME>
+     <SCONAME>CT_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_MESSAGES</CMPNAME>
+     <SCONAME>CV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_MESSAGES</CMPNAME>
+     <SCONAME>IT_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_MESSAGES</CMPNAME>
+     <SCONAME>IV_INDEX</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Index of Internal Tables</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_OPERATION</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_OPERATION</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_OPERATION</CMPNAME>
+     <SCONAME>IT_MRCP_OPERATION</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of MRCP Operations</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_PHASE</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_PHASE</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_PHASE</CMPNAME>
+     <SCONAME>IT_MRCP_PHASE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of MRCP Operations</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_PI</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_PI</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_PI</CMPNAME>
+     <SCONAME>IT_MRCP_PI</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of MRCP Process Instructions</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_PI_CHAR_VAL</CMPNAME>
+     <SCONAME>ET_INDEX_FAILED</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Index of node ID for which no data is availab</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_PI_CHAR_VAL</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_PI_CHAR_VAL</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_PI_CHAR_VAL</CMPNAME>
+     <SCONAME>IT_MRCP_PI_CHAR_VAL</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of MRCP Process Instructions</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_PRODVER</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_PRODVER</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_PRODVER</CMPNAME>
+     <SCONAME>IT_MRCP_PRODVER</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Master Recipe Production Version</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_RESOURCE</CMPNAME>
+     <SCONAME>ET_INDEX_FAILED</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Index of node ID for which no data is availab</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_RESOURCE</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_RESOURCE</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_RESOURCE</CMPNAME>
+     <SCONAME>IT_MRCP_RESOURCE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of MRCP PI Characteristics</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_RSC</CMPNAME>
+     <SCONAME>ET_INDEX_FAILED</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Index of node ID for which no data is availab</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_RSC</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_RSC</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHANGE_RSC</CMPNAME>
+     <SCONAME>IT_MRCP_RSC</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of MRCP Operations</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_EXISTENCE</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_EXISTENCE</CMPNAME>
+     <SCONAME>ET_MRCP_HEADER</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of MRCP Header</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_EXISTENCE</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CHECK_EXISTENCE</CMPNAME>
+     <SCONAME>IT_MRCP_KEY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of Master Recipe Keys</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CLEAN_UP</CMPNAME>
+     <SCONAME>IV_REASON</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Reason for Clean Up</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>COPY_ELEMENT_TO_BUFFER_OLD</CMPNAME>
+     <SCONAME>IS_MRCP_KEY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Master Recipe Key</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>COPY_ELEMENT_TO_BUFFER_OLD</CMPNAME>
+     <SCONAME>IS_MRCP_OBJECT</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Master Recipe Object</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>COPY_ELEMENT_TO_BUFFER_OLD</CMPNAME>
+     <SCONAME>IV_TYPE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Subobject Type</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>CREATE</CMPNAME>
+     <SCONAME>IT_MRCP_HEADER</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of MRCP Header</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE</CMPNAME>
+     <SCONAME>ET_INDEX_FAILED</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Index of node ID for which no data is availab</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE</CMPNAME>
+     <SCONAME>IT_MRCP_KEY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of MRCP Keys</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE_OPERATION</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE_OPERATION</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE_OPERATION</CMPNAME>
+     <SCONAME>IT_MRCP_OPERATION_KEY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of MRCP Operation Keys</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE_PHASE</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE_PHASE</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE_PHASE</CMPNAME>
+     <SCONAME>IT_MRCP_PHASE_KEY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of MRCP Phase Keys</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE_PI</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE_PI</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE_PI</CMPNAME>
+     <SCONAME>IT_MRCP_PI_KEY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of MRCP Process Instruction Keys</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE_PI_CHAR_VAL</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE_PI_CHAR_VAL</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE_PI_CHAR_VAL</CMPNAME>
+     <SCONAME>IT_MRCP_PI_CHAR_VAL_KEY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of MRCP PI Characteristic Keys</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE_RESOURCE</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE_RESOURCE</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE_RESOURCE</CMPNAME>
+     <SCONAME>IT_MRCP_RESOURCE_KEY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of MRCP Resource Keys</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE_RSC</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE_RSC</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>DELETE_RSC</CMPNAME>
+     <SCONAME>IT_MRCP_RSC_KEY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of MRCP Operation Keys</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_DEFAULT_VALUES_WORKCENTER</CMPNAME>
+     <SCONAME>CS_PLPOD</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>I/O table for task list operations and network activities</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_DETAILS</CMPNAME>
+     <SCONAME>ET_INDEX_FAILED</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Index of node ID for which no data is available</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_DETAILS</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_DETAILS</CMPNAME>
+     <SCONAME>ET_MRCP</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of master recipes</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_DETAILS</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_DETAILS</CMPNAME>
+     <SCONAME>IT_MRCP_KEY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of Master Recipe Keys</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_DETAILS</CMPNAME>
+     <SCONAME>IT_MRCP_VERID</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of Master Recipe Keys with Prod. Vers.</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_DETAILS</CMPNAME>
+     <SCONAME>IV_LOCK</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Locking Indicator</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_DETAILS</CMPNAME>
+     <SCONAME>IV_ONLY_FROM_DB</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Get data only from DB (Skip temporary objects in buffer)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_INSTANCE</CMPNAME>
+     <SCONAME>RO_MRCP</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Business logic for master recipe</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_PI</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_PI</CMPNAME>
+     <SCONAME>ET_PI</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of MRCP Process Instructions</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_PI</CMPNAME>
+     <SCONAME>ET_PI_CHAR_VAL</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of MRCP PI Characteristics</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_PI</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_PI</CMPNAME>
+     <SCONAME>IT_MRCP_PI_KEY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of MRCP Process Instruction Keys</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_PI</CMPNAME>
+     <SCONAME>IV_WHOLE_SUBTREE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Data element for domain BOOLE: TRUE (=&apos;X&apos;) and FALSE (=&apos; &apos;)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_SEQ_INCREMENT</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_SEQ_INCREMENT</CMPNAME>
+     <SCONAME>EV_INCREMENT</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Increment</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_SEQ_INCREMENT</CMPNAME>
+     <SCONAME>IV_PROFILE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Profile</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_SEQ_INCREMENT</CMPNAME>
+     <SCONAME>IV_TYPE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Subobject type</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_SEQ_NUM</CMPNAME>
+     <SCONAME>ES_ITEM</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>The selected element</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_SEQ_NUM</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_SEQ_NUM</CMPNAME>
+     <SCONAME>EV_SEQ_NUM</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Sequence number</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_SEQ_NUM</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_SEQ_NUM</CMPNAME>
+     <SCONAME>IS_ID</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>ID</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_SEQ_NUM</CMPNAME>
+     <SCONAME>IV_DATUV</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Valid-From Date</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_SEQ_NUM</CMPNAME>
+     <SCONAME>IV_GET_LAST</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>In case of no PLNKN, you want the last or first element</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_SEQ_NUM</CMPNAME>
+     <SCONAME>IV_PLNAL</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Group Counter</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>GET_SEQ_NUM</CMPNAME>
+     <SCONAME>IV_PLNNR</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Recipe Group</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LOCK</CMPNAME>
+     <SCONAME>IV_PLNNR</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Key for Task List Group</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>LOCK</CMPNAME>
+     <SCONAME>RV_SUCCESS</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Data element for domain BOOLE: TRUE (=&apos;X&apos;) and FALSE (=&apos; &apos;)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE</CMPNAME>
+     <SCONAME>IS_ID</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>What do we want to move</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE</CMPNAME>
+     <SCONAME>IS_SIBLING</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>We want to move next to</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE</CMPNAME>
+     <SCONAME>IV_DATUV</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Valid-From Date</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE</CMPNAME>
+     <SCONAME>IV_INSERT_BEFORE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Data element for domain BOOLE: TRUE (=&apos;X&apos;) and FALSE (=&apos; &apos;)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE</CMPNAME>
+     <SCONAME>IV_PLNAL</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Group Counter</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE</CMPNAME>
+     <SCONAME>IV_PLNNR</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Key for Task List Group</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_OPERATION</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_OPERATION</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_OPERATION</CMPNAME>
+     <SCONAME>IS_MRCP_KEY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Master Recipe Key</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_OPERATION</CMPNAME>
+     <SCONAME>IV_INSERT_BEFORE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Data element for domain BOOLE: TRUE (=&apos;X&apos;) and FALSE (=&apos; &apos;)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_OPERATION</CMPNAME>
+     <SCONAME>IV_ITEM_PLNKN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Number of the task list node</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_OPERATION</CMPNAME>
+     <SCONAME>IV_SIBLING_PLNKN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Number of the task list node</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_PHASE</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_PHASE</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_PHASE</CMPNAME>
+     <SCONAME>IS_MRCP_KEY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Master Recipe Key</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_PHASE</CMPNAME>
+     <SCONAME>IV_INSERT_BEFORE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Data element for domain BOOLE: TRUE (=&apos;X&apos;) and FALSE (=&apos; &apos;)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_PHASE</CMPNAME>
+     <SCONAME>IV_ITEM_PLNKN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Number of the task list node</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_PHASE</CMPNAME>
+     <SCONAME>IV_SIBLING_PLNKN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Number of the task list node</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_PHASE</CMPNAME>
+     <SCONAME>IV_SIBLING_PVZKN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Number of the task list node</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_PI</CMPNAME>
+     <SCONAME>ES_MRCP_PI</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Table of MRCP Process Instructions</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_PI</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_PI</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_PI</CMPNAME>
+     <SCONAME>IS_MRCP_KEY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Master Recipe Key</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_PI</CMPNAME>
+     <SCONAME>IV_INSERT_BEFORE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Data element for domain BOOLE: TRUE (=&apos;X&apos;) and FALSE (=&apos; &apos;)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_PI</CMPNAME>
+     <SCONAME>IV_ITEM_PLNFT</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Number of the task list node</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_PI</CMPNAME>
+     <SCONAME>IV_ITEM_PLNKN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Number of the task list node</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_PI</CMPNAME>
+     <SCONAME>IV_SIBLING_PLNFT</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Number of the task list node</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_PI</CMPNAME>
+     <SCONAME>IV_SIBLING_PLNKN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Number of the task list node</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_PI_CHAR_VAL</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_PI_CHAR_VAL</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_PI_CHAR_VAL</CMPNAME>
+     <SCONAME>IS_MRCP_KEY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Master Recipe Key</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_PI_CHAR_VAL</CMPNAME>
+     <SCONAME>IV_INSERT_BEFORE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Data element for domain BOOLE: TRUE (=&apos;X&apos;) and FALSE (=&apos; &apos;)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_PI_CHAR_VAL</CMPNAME>
+     <SCONAME>IV_ITEM_MKMZL</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Number of the task list node</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_PI_CHAR_VAL</CMPNAME>
+     <SCONAME>IV_ITEM_PLNFT</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Number of the task list node</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_PI_CHAR_VAL</CMPNAME>
+     <SCONAME>IV_ITEM_PLNKN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Number of the task list node</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_PI_CHAR_VAL</CMPNAME>
+     <SCONAME>IV_SIBLING_MKMZL</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Internal PI characteristic/characteristic value number</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_PI_CHAR_VAL</CMPNAME>
+     <SCONAME>IV_SIBLING_PLNFT</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Number of the task list node</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_PI_CHAR_VAL</CMPNAME>
+     <SCONAME>IV_SIBLING_PLNKN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Number of the task list node</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_RESOURCE</CMPNAME>
+     <SCONAME>ES_MRCP_RESOURCE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Master Recipe Resource ; TODO: include MRTRSS_PLPO_OPR</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_RESOURCE</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_RESOURCE</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_RESOURCE</CMPNAME>
+     <SCONAME>IS_MRCP_KEY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Master Recipe Key</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_RESOURCE</CMPNAME>
+     <SCONAME>IV_INSERT_BEFORE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Data element for domain BOOLE: TRUE (=&apos;X&apos;) and FALSE (=&apos; &apos;)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_RESOURCE</CMPNAME>
+     <SCONAME>IV_ITEM_PLNKN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Number of the task list node</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_RESOURCE</CMPNAME>
+     <SCONAME>IV_SIBLING_PLNKN</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Number of the task list node</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>MOVE_RESOURCE</CMPNAME>
+     <SCONAME>IV_SIBLING_SUMNR</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Node number of the superior operation</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>READ_MRCP_FROM_DB</CMPNAME>
+     <SCONAME>/PLMI/CX_MRCP_BL</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Exception class for Master Recipe BL</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>READ_MRCP_FROM_DB</CMPNAME>
+     <SCONAME>IS_MRCP_KEY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Master Recipe Key</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>READ_MRCP_FROM_DB</CMPNAME>
+     <SCONAME>IV_VERID</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Production Version</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SAVE</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SAVE</CMPNAME>
+     <SCONAME>EV_FAILED</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Failed Indicator</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SAVE</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SAVE_INT</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SAVE_INT</CMPNAME>
+     <SCONAME>EV_FAILED</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Failed Indicator</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SAVE_INT</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SAVE_INT</CMPNAME>
+     <SCONAME>IV_AKTYP</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Activity category in SAP transaction</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SHIFT_ITEMS</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SHIFT_ITEMS</CMPNAME>
+     <SCONAME>EV_SEVERITY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message Severity</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SHIFT_ITEMS</CMPNAME>
+     <SCONAME>EV_SHIFTED_FROM</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Count parameters</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SHIFT_ITEMS</CMPNAME>
+     <SCONAME>IV_BACKWARDS</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Shifting will be performed backwards</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SHIFT_ITEMS</CMPNAME>
+     <SCONAME>IV_BY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Shift increment multiplier</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SHIFT_ITEMS</CMPNAME>
+     <SCONAME>IV_DATUV</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Valid-From Date</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SHIFT_ITEMS</CMPNAME>
+     <SCONAME>IV_INCLUDING_FROM</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Include reference element in shifting</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SHIFT_ITEMS</CMPNAME>
+     <SCONAME>IV_PLNAL</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Group Counter</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SHIFT_ITEMS</CMPNAME>
+     <SCONAME>IV_PLNNR</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Key for Task List Group</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SHIFT_SEQUENCE</CMPNAME>
+     <SCONAME>ET_MESSAGE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Message</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SHIFT_SEQUENCE</CMPNAME>
+     <SCONAME>IS_FROM</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Shift from this element</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SHIFT_SEQUENCE</CMPNAME>
+     <SCONAME>IV_BACKWARDS</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Shifting will be performed backwards</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SHIFT_SEQUENCE</CMPNAME>
+     <SCONAME>IV_BY</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Shift increment multiplier</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SHIFT_SEQUENCE</CMPNAME>
+     <SCONAME>IV_DATUV</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Valid-From Date</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SHIFT_SEQUENCE</CMPNAME>
+     <SCONAME>IV_INCLUDING_FROM</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Include reference element in shifting</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SHIFT_SEQUENCE</CMPNAME>
+     <SCONAME>IV_PLNAL</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Group Counter</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SHIFT_SEQUENCE</CMPNAME>
+     <SCONAME>IV_PLNNR</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Key for Task List Group</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>SHIFT_SEQUENCE</CMPNAME>
+     <SCONAME>IV_TYPE</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Subobject type</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>WRITE_MRCP</CMPNAME>
+     <SCONAME>/PLMI/CX_MRCP_BL</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Exception class for Master Recipe BL</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>WRITE_MRCP</CMPNAME>
+     <SCONAME>CV_WRITE_WAS_CALLED</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Data element for domain BOOLE: TRUE (=&apos;X&apos;) and FALSE (=&apos; &apos;)</DESCRIPT>
+    </SEOSUBCOTX>
+    <SEOSUBCOTX>
+     <CMPNAME>WRITE_MRCP</CMPNAME>
+     <SCONAME>IV_AKTYP</SCONAME>
+     <LANGU>E</LANGU>
+     <DESCRIPT>Activity category in SAP transaction</DESCRIPT>
+    </SEOSUBCOTX>
+   </DESCRIPTIONS_SUB>
+  </asx:values>
+ </asx:abap>
+</abapGit>
